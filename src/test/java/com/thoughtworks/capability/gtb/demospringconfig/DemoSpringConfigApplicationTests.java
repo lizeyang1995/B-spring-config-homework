@@ -38,5 +38,4 @@ class DemoSpringConfigApplicationTests {
 		mockMvc.perform(get("/level"))
 				.andExpect(jsonPath("$", Matchers.is("advanced")));
 	}
-
 }
