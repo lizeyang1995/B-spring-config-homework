@@ -20,21 +20,21 @@ class DemoSpringConfigApplicationTests {
 
 	@Test
 	void should_return_basic_when_levelNumber_less_than_1() throws Exception {
-		levelController.setLevelNumber(0);
+		levelController.levelNumber = 0;
 		mockMvc.perform(get("/level"))
 				.andExpect(jsonPath("$", Matchers.is("basic")));
 	}
 
 	@Test
 	void should_return_basic_when_levelNumber_large_than_1() throws Exception {
-		levelController.setLevelNumber(2);
+		levelController.levelNumber = 2;
 		mockMvc.perform(get("/level"))
 				.andExpect(jsonPath("$", Matchers.is("advanced")));
 	}
 
 	@Test
 	void should_return_basic_when_levelNumber_is_1() throws Exception {
-		levelController.setLevelNumber(1);
+		levelController.levelNumber = 1;
 		mockMvc.perform(get("/level"))
 				.andExpect(jsonPath("$", Matchers.is("advanced")));
 	}
